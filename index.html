@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Diwali | Thoyajaksh M.</title>
+
+<style>
+:root {
+  --pink: #e91e63;
+  --deep: #7b123e;
+  --gold: #ffb52e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--deep);
+  font-family: Georgia, serif;
+  background: radial-gradient(circle, #fff, #fff7fb);
+}
+
+.scene {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 42px 16px 120px;
+}
+
+/* Fairy lights */
+
+.lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.lights:before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  width: 110%;
+  height: 58px;
+  border-top: 3px solid #a65a22;
+  border-radius: 50%;
+}
+
+.bulb {
+  z-index: 1;
+  margin-top: 34px;
+  width: 13px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffe78a;
+  box-shadow: 0 0 10px 5px #ffd35d,
+              0 0 25px 9px #ffc44b;
+  animation: twinkle 1.8s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: .55; }
+  to { opacity: 1; }
+}
+
+/* Main poster */
+
+.card {
+  position: relative;
+  z-index: 2;
+  width: min(760px, 100%);
+  text-align: center;
+  padding: 48px 24px 35px;
+  border: 1px solid #ffe0ed;
+  border-radius: 34px;
+  background: rgba(255,255,255,.9);
+  box-shadow: 0 18px 60px #d94b7b20;
+}
+
+.topline {
+  color: #c18422;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  font: bold 12px Arial;
+}
+
+h1 {
+  margin: 12px 0 0;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  color: var(--deep);
+}
+
+.diwali {
+  display: block;
+  margin-top: 8px;
+  font-size: clamp(4rem, 14vw, 8.3rem);
+  line-height: 1.02;
+  font-style: italic;
+  font-weight: bold;
+  letter-spacing: -.07em;
+
+  background: linear-gradient(
+    100deg,
+    #9e174e,
+    #f21b79,
+    #a91452
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.underline {
+  width: min(420px, 85%);
+  height: 8px;
+  margin: 4px auto 14px;
+  border-bottom: 5px solid #f52b83;
+  border-radius: 50%;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: clamp(1.15rem, 4vw, 1.8rem);
+  color: #8b234c;
+  font-style: italic;
+}
+
+.message {
+  margin: 20px auto 6px;
+  max-width: 530px;
+  font: 16px/1.6 Arial;
+  color: #744154;
+}
+
+.signature {
+  margin-top: 12px;
+  color: #c31d63;
+  font: bold 17px Arial;
+}
+
+/* Diyas */
+
+.decor {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 25px;
+  margin: 28px auto 0;
+}
+
+.diya {
+  position: relative;
+  width: 110px;
+  height: 55px;
+  border-radius: 12px 12px 55px 55px;
+  border: 3px solid #a94712;
+
+  background: linear-gradient(
+    #ffcf55,
+    #e66a16 65%,
+    #9d2d17
+  );
+
+  box-shadow: 0 12px 20px #ed8c3440;
+}
+
+.diya:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -52px;
+  width: 22px;
+  height: 43px;
+  transform: translateX(-50%);
+
+  background: radial-gradient(
+    ellipse,
+    #fff,
+    #fff7a2,
+    #ffb21e,
+    #f36b13
+  );
+
+  border-radius: 50%;
+  filter: drop-shadow(0 0 12px #ffc33e);
+  animation: flame .8s infinite alternate;
+}
+
+.diya:after {
+  content: "✿";
+  position: absolute;
+  inset: 12px 0 auto;
+  color: #ffe68a;
+  font-size: 22px;
+}
+
+@keyframes flame {
+  from {
+    transform: translateX(-50%) scale(.92);
+  }
+  to {
+    transform: translateX(-50%) scale(1.08);
+  }
+}
+
+.small {
+  transform: scale(.78);
+}
+
+/* Button */
+
+button {
+  margin-top: 30px;
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 25px;
+  cursor: pointer;
+  color: white;
+
+  background: linear-gradient(
+    100deg,
+    #e91e63,
+    #a31350
+  );
+
+  font: bold 15px Arial;
+  box-shadow: 0 8px 20px #e91e6340;
+}
+
+.hint {
+  color: #a16b7f;
+  font: 12px Arial;
+}
+
+/* Rocket */
+
+.rocket {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  z-index: 5;
+  font-size: 42px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rocket.go {
+  animation: launch 2.3s ease-in forwards;
+}
+
+@keyframes launch {
+  0% {
+    bottom: -70px;
+    opacity: 1;
+    transform: rotate(-35deg);
+  }
+
+  100% {
+    bottom: 110vh;
+    left: 70%;
+    opacity: 0;
+    transform: rotate(-35deg) scale(1.2);
+  }
+}
+
+/* Sparkles */
+
+.spark {
+  position: fixed;
+  z-index: 4;
+  pointer-events: none;
+  font-size: 20px;
+  animation: burst 1.5s ease-out forwards;
+}
+
+@keyframes burst {
+  0% {
+    opacity: 1;
+    transform: translate(0,0) scale(.5);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(var(--x),var(--y)) scale(1.5);
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 18px;
+  width: 100%;
+  text-align: center;
+  color: #b17a91;
+  font: 11px Arial;
+}
+
+@media(max-width:480px) {
+  .card {
+    padding: 38px 15px 28px;
+  }
+
+  .message {
+    font-size: 14px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="scene">
+
+  <div class="lights">
+    <i class="bulb"></i>
+    <i class="bulb"></i>
+    <i class="bulb"></i>
+    <i class="bulb"></i>
+    <i class="bulb"></i>
+    <i class="bulb"></i>
+    <i class="bulb"></i>
+    <i class="bulb"></i>
+    <i class="bulb"></i>
+    <i class="bulb"></i>
+  </div>
+
+  <main class="card">
+
+    <div class="topline">
+      A Little Sparkle • A Lot of Happiness
+    </div>
+
+    <h1>Happy</h1>
+
+    <span class="diwali">Diwali</span>
+
+    <div class="underline"></div>
+
+    <p class="subtitle">
+      Festival of Lights
+    </p>
+
+    <p class="message" id="wish">
+      May your home glow with happiness,
+      your days shine with hope, and your
+      year sparkle with beautiful moments.
+    </p>
+
+    <div class="signature">
+      With love, Thoyajaksh M. ✨
+    </div>
+
+    <div class="decor">
+
+      <div class="diya small"></div>
+
+      <div class="diya"></div>
+
+      <div class="diya small"></div>
+
+    </div>
+
+    <button id="celebrate">
+      ✨ Turn on the Diwali lights
+    </button>
+
+    <p class="hint">
+      Tap the button for a little festive surprise!
+    </p>
+
+  </main>
+
+  <footer>
+    Made with light, love & festive wishes 🪔
+  </footer>
+
+</div>
+
+<div class="rocket" id="rocket">
+  🚀
+</div>
+
+<script>
+
+const button = document.getElementById("celebrate");
+const rocket = document.getElementById("rocket");
+
+function sparkle(x, y) {
+
+  const symbols = ["✦", "✧", "✨", "❋"];
+
+  for (let i = 0; i < 18; i++) {
+
+    const s = document.createElement("span");
+
+    s.className = "spark";
+
+    s.textContent =
+      symbols[Math.floor(Math.random() * symbols.length)];
+
+    s.style.left = x + "px";
+    s.style.top = y + "px";
+
+    s.style.color =
+      ["#f5a623", "#ec3280", "#ff7c32"][i % 3];
+
+    s.style.setProperty(
+      "--x",
+      (Math.random() * 240 - 120) + "px"
+    );
+
+    s.style.setProperty(
+      "--y",
+      (Math.random() * 220 - 110) + "px"
+    );
+
+    document.body.appendChild(s);
+
+    setTimeout(() => s.remove(), 1600);
+  }
+}
+
+button.addEventListener("click", () => {
+
+  button.textContent =
+    "🪔 Lights are glowing — celebrate!";
+
+  document.querySelectorAll(".bulb").forEach(b => {
+    b.style.animationDuration = ".7s";
+  });
+
+  sparkle(
+    window.innerWidth / 2,
+    window.innerHeight / 2
+  );
+
+  rocket.classList.remove("go");
+
+  void rocket.offsetWidth;
+
+  rocket.classList.add("go");
+
+  document.getElementById("wish").textContent =
+    "Happy Diwali! May light always find its way into your heart and home. Have a joyful and beautiful Festival of Lights!";
+
+});
+
+document.addEventListener("click", e => {
+
+  if (e.target !== button) {
+    sparkle(e.clientX, e.clientY);
+  }
+
+});
+
+</script>
+
+</body>
+</html>
